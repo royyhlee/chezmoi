@@ -1,0 +1,12 @@
+tt.*
+.tests
+doc/tags
+debug
+.repro
+foo.*
+*.log
+data
+
+private_dot_config/nvim/dot_git
+private_dot_config/nvim/dot_gitignore
+
