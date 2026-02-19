@@ -170,11 +170,14 @@ alias vi="nvim"
 # FNM
 eval "$(fnm env --use-on-cd --shell zsh)"
 
+{{- if .work }}
 # Fix weird dir colors on wsl
 eval "$(dircolors -b ~/.dircolors)"
 
 # Load Angular CLI autocompletion.
 source <(ng completion script)
+
+{{ end }}
 
 # Zoxide
 eval "$(zoxide init zsh)"
