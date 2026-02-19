@@ -3,5 +3,10 @@
     autoPush = true
 
 [data]
+{{- if eq .chezmoi.hostname "OCYLEE1" }}
     email = "ylee@costar.com"
     work = true
+{{- else }}
+    email = "royyhlee@gmail.com"
+    work = false
+{{- end }}
