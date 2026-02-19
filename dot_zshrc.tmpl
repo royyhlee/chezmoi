@@ -5,7 +5,9 @@ export PATH=$HOME/.local/bin:$PATH
 export ZSH="$HOME/.oh-my-zsh"
 
 # Node.js
+{{- if .work }}
 export NODE_EXTRA_CA_CERTS=$HOME/combined-cert.pem
+{{- end }}
 
 # .NET
 export DOTNET_ROOT=/usr/share/dotnet
@@ -40,9 +42,10 @@ export PATH=$HOME/.cargo/bin:$PATH
 # export PATH=/mnt/c/Users/ylee/scoop/shims/git.exe:$PATH
 
 # SSL
+{{- if .work }}
 export CURL_CA_BUNDLE=$HOME/combined-cert.pem
-
 export SSL_CERT_DIR=$HOME/.aspnet/dev-certs/trust:/usr/lib/ssl/certs
+{{- end }}
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time Oh My Zsh is loaded, in which case,
@@ -177,7 +180,10 @@ eval "$(dircolors -b ~/.dircolors)"
 # Load Angular CLI autocompletion.
 source <(ng completion script)
 
-{{ end }}
+# WSL
+sudo /root/wsl-init.sh > /dev/null
+
+{{- end }}
 
 # Zoxide
 eval "$(zoxide init zsh)"
@@ -204,6 +210,3 @@ zi() {
 
 # Starship
 eval "$(starship init zsh)"
-
-# WSL
-sudo /root/wsl-init.sh > /dev/null
