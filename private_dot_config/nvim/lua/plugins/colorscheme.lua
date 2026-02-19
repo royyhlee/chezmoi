@@ -1,0 +1,146 @@
+return {
+  -- lua/plugins/rose-pine.lua
+  -- {
+  --   "rose-pine/neovim",
+  --   name = "rose-pine",
+  --   opts = {
+  --     styles = {
+  --       italic = false, -- Disable italic text
+  --     },
+  --   },
+  -- },
+
+  -- {
+  --   "EdenEast/nightfox.nvim",
+  --   config = function()
+  --     require("nightfox").setup({
+  --       groups = {
+  --         all = {
+  --           CursorLine = { bg = "none" }, -- Disable background for CursorLine
+  --         },
+  --       },
+  --     })
+  --   end,
+  -- },
+
+  -- {
+  --   "neanias/everforest-nvim",
+  --   lazy = false,
+  --   priority = 1000,
+  --   config = function()
+  --     require("everforest").setup({
+  --       background = "soft",
+  --       italics = false,
+  --     })
+  --   end,
+  -- },
+
+  -- {
+  --   "rebelot/kanagawa.nvim",
+  -- },
+
+  -- {
+  --   "miikanissi/modus-themes.nvim",
+  --   config = function()
+  --     require("modus-themes").setup({
+  --       style = "modus_operandi", -- modus_vivendi, modus_operandi
+  --       variant = "tritanopia", -- deuteranopia, tinted, tritanopia
+  --       on_colors = function(colors)
+  --         colors.bg_main = "#eeeeee"
+  --         colors.bg_dim = "#d4d4d4"
+  --         colors.fg_main = "#262626"
+  --       end,
+  --     })
+  --   end,
+  -- },
+
+  -- {
+  --   "hyperb1iss/silkcircuit-nvim",
+  --   lazy = false,
+  --   priority = 1000,
+  --   dependencies = { "folke/snacks.nvim" },
+  --   opts = {
+  --     variant = "vibrant",
+  --     -- NOTE: Below doesn't work; Using autocmd in config instead
+  --     -- on_highlights = function(highlights, colors)
+  --     --   highlights.WinSeparator = { fg = "#ffffff" }
+  --     --   highlights.VertSplit = { fg = "#FFFFFF" }
+  --     -- end,
+  --   },
+  --   config = function(_, opts)
+  --     require("silkcircuit").setup(opts)
+  --
+  --     vim.api.nvim_create_autocmd("ColorScheme", {
+  --       pattern = "silkcircuit",
+  --       callback = function()
+  --         for _, group in ipairs(vim.fn.getcompletion("@lsp", "highlight")) do
+  --           vim.api.nvim_set_hl(0, group, {})
+  --         end
+  --
+  --         -- Collapse detail into core groups
+  --         for _, group in ipairs({
+  --           "@variable.parameter",
+  --           "@variable.member",
+  --           "@property",
+  --           "@field",
+  --         }) do
+  --           vim.api.nvim_set_hl(0, group, { link = "Identifier" })
+  --         end
+  --
+  --         vim.api.nvim_set_hl(0, "WinSeparator", { fg = "#b366ff" })
+  --       end,
+  --     })
+  --   end,
+  -- },
+
+  {
+    "habamax/vim-habamax",
+    lazy = false,
+    priority = 1000,
+    config = function(_, opts)
+      for _, group in ipairs(vim.fn.getcompletion("@lsp", "highlight")) do
+        vim.api.nvim_set_hl(0, group, {})
+      end
+
+      vim.api.nvim_create_autocmd("ColorScheme", {
+        pattern = "xamabah",
+        callback = function()
+          vim.api.nvim_set_hl(0, "@tag.attribute.html", { link = "Type" })
+          vim.api.nvim_set_hl(0, "NormalFloat", { link = "Normal" })
+        end,
+      })
+    end,
+  },
+
+  -- {
+  --   "projekt0n/github-nvim-theme",
+  --   lazy = false,
+  --   priority = 1000,
+  -- },
+  --
+  -- {
+  --   "datsfilipe/vesper.nvim",
+  --   lazy = false,
+  --   priority = 1000,
+  -- },
+
+  -- {
+  --   "jake-stewart/color256",
+  --   lazy = false,
+  --   priority = 1000,
+  -- },
+
+  {
+    "LazyVim/LazyVim",
+    opts = {
+      -- colorscheme = "rose-pine-dawn",
+      -- colorscheme = "modus",
+      colorscheme = "xamabah",
+      -- colorscheme = "github_light",
+      -- colorscheme = "silkcircuit",
+      -- colorscheme = function()
+      --   dofile(vim.fn.stdpath("data") .. "/lazy/color256/theme.nvim.lua")
+      -- end,
+    },
+  },
+}
