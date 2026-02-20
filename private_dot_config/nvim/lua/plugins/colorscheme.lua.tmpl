@@ -135,8 +135,11 @@ return {
     opts = {
       -- colorscheme = "rose-pine-dawn",
       -- colorscheme = "modus",
+      {{- if .work }}
       colorscheme = "xamabah",
-      -- colorscheme = "habamax",
+      {{- else }}
+      colorscheme = "habamax",
+      {{- end }}
       -- colorscheme = "github_light",
       -- colorscheme = "silkcircuit",
       -- colorscheme = function()
