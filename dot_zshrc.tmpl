@@ -10,11 +10,9 @@ export NODE_EXTRA_CA_CERTS=$HOME/combined-cert.pem
 {{- end }}
 
 # Zig
-{{- if .work }}
 export ZVM_INSTALL=$HOME/.zvm/bin/self
 export PATH=$HOME/.zvm/bin
 export PATH=$ZVM_INSTALL:$PATH
-{{- end }}
 
 # .NET
 export DOTNET_ROOT=/usr/share/dotnet
