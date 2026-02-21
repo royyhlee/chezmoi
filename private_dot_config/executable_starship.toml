@@ -107,7 +107,7 @@ show_always = false
 ssh_only = true
 ssh_symbol = "🌐 "
 format = "[@$hostname$ssh_symbol]($style) "
-style = "bold cyan_bright"
+style = "bold bright-cyan"
 disabled = false
 
 [directory]
@@ -165,17 +165,17 @@ disabled = false
 
 [git_status]
 format = '([\[$all_status$ahead_behind\]]($style) )'
-style = "bold cyan_bright"
-conflicted = '[🏳](bold red_bright)'
-up_to_date = '[✓](bold green_bright)'
+style = "bold bright-cyan"
+conflicted = '[🏳](bold bright-red)'
+up_to_date = '[✓](bold bright-green)'
 untracked = '[?](bold yellow)'
-ahead = '[⇡\(${count}\)](bold cyan_bright)'
-diverged = '[⇡\(${ahead_count}\)](bold magenta_bright)[⇣\(${behind_count}\)](bold magenta_bright)'
+ahead = '[⇡\(${count}\)](bold bright-cyan)'
+diverged = '[⇡\(${ahead_count}\)](bold bright-magenta)[⇣\(${behind_count}\)](bold bright-magenta)'
 behind = '[⇣\(${count}\)](bold magenta)'
-stashed = '[📦](bold blue_bright)'
+stashed = '[📦](bold bright-blue)'
 modified = '[!](bold orange)'
 staged = '[++\(${count}\)](bold green)'
-renamed = '[»](bold purple_dark)'
+renamed = '[»](bold dark-purple)'
 deleted = '[✘](bold red)'
 
 [cmd_duration]
@@ -207,7 +207,7 @@ disabled = false
 [time]
 disabled = false
 format = '[$time]($style) '
-style = "bold purple_dark"
+style = "bold dark-purple"
 time_format = "%T"
 
 [battery]
@@ -414,7 +414,7 @@ style = "bold blue"
 [package]
 symbol = "📦 "
 format = '[$symbol$version]($style) '
-style = "bold cyan_bright"
+style = "bold bright-cyan"
 display_private = false
 
 [perl]
@@ -597,16 +597,16 @@ disabled = false
 # Palette definition for custom colors
 [palettes.silkcircuit_vibrant]
 cyan = "#00ffcc"
-cyan_bright = "#00ffff"
+bright-cyan = "#00ffff"
 purple = "#ff00ff"
-purple_dark = "#b366ff"
+dark-purple = "#b366ff"
 pink = "#ff00cc"
 pink_soft = "#ff99ff"
 green = "#00ff66"
-green_bright = "#66ff99"
+bright-green = "#66ff99"
 blue = "#6699ff"
 yellow = "#ffcc00"
-yellow_bright = "#ffff66"
+bright-yellow = "#ffff66"
 orange = "#ff00aa"
 red = "#ff3366"
 coral = "#F78C6C"
@@ -621,16 +621,16 @@ blue = "#005faf"
 magenta = "#870087"
 cyan = "#005f5f"
 white = "#dadada"
-black_bright = "#303030"
-red_bright = "#d70000"
-green_bright = "#008700"
-yellow_bright = "#af5f00"
-blue_bright = "#0087d7"
-magenta_bright = "#af00af"
-cyan_bright = "#008787"
-white_bright = "#ffffff"
+bright-black = "#303030"
+bright-red = "#d70000"
+bright-green = "#008700"
+bright-yellow = "#af5f00"
+bright-blue = "#0087d7"
+bright-magenta = "#af00af"
+bright-cyan = "#008787"
+bright-white = "#ffffff"
 purple = "#870087"
-purple_dark = "#af00af"
+dark-purple = "#af00af"
 pink = "#af00af"
 orange = "#af5f00"
 
