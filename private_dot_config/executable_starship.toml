@@ -166,17 +166,17 @@ disabled = false
 [git_status]
 format = '([\[$all_status$ahead_behind\]]($style) )'
 style = "bold cyan_bright"
-conflicted = '[🏳](bold fg:#ff3366)'
-up_to_date = '[✓](bold fg:#00ff66)'
-untracked = '[?](bold fg:#ffcc00)'
-ahead = '[⇡\(${count}\)](bold fg:#00ffcc)'
-diverged = '[⇡\(${ahead_count}\)](bold fg:#ff00ff)[⇣\(${behind_count}\)](bold fg:#ff00ff)'
-behind = '[⇣\(${count}\)](bold fg:#ff00cc)'
-stashed = '[📦](bold fg:#6699ff)'
-modified = '[!](bold fg:#ff9900)'
-staged = '[++\(${count}\)](bold fg:#66ff99)'
-renamed = '[»](bold fg:#b366ff)'
-deleted = '[✘](bold fg:#ff3366)'
+conflicted = '[🏳](bold red_bright)'
+up_to_date = '[✓](bold green_bright)'
+untracked = '[?](bold yellow)'
+ahead = '[⇡\(${count}\)](bold cyan_bright)'
+diverged = '[⇡\(${ahead_count}\)](bold magenta_bright)[⇣\(${behind_count}\)](bold magenta_bright)'
+behind = '[⇣\(${count}\)](bold magenta)'
+stashed = '[📦](bold blue_bright)'
+modified = '[!](bold orange)'
+staged = '[++\(${count}\)](bold green)'
+renamed = '[»](bold purple_dark)'
+deleted = '[✘](bold red)'
 
 [cmd_duration]
 min_time = 500
